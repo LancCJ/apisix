@@ -399,6 +399,7 @@ plugins:                          # plugin list (sorted by priority)
   - example-plugin                 # priority: 0
   - AppKey                         # priority: 99
   - ValidateTerm                   # priority: 98
+  - IpWhite                        # priority: 97
   - aws-lambda                     # priority: -1899
   - azure-functions                # priority: -1900
   - openwhisk                      # priority: -1901
