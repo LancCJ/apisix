@@ -163,7 +163,7 @@ nginx_config:                     # config for render the template to generate n
                                   # the "user" directive makes sense only if the master process runs with super-user privileges.
                                   # if you're not root user,the default is current user.
   error_log: logs/error.log
-  error_log_level:  warn          # warn,error
+  error_log_level:  info          # warn,error,info
   worker_processes: auto          # if you want use multiple cores in container, you can inject the number of cpu as environment variable "APISIX_WORKER_PROCESSES"
   enable_cpu_affinity: true       # enable cpu affinity, this is just work well only on physical machine
   worker_rlimit_nofile: 20480     # the number of files a worker process can open, should be larger than worker_connections
@@ -397,7 +397,8 @@ plugins:                          # plugin list (sorted by priority)
   #- log-rotate                    # priority: 100
   # <- recommend to use priority (0, 100) for your custom plugins
   - example-plugin                 # priority: 0
-  - apikey-auth                    # priority: 99
+  - AppKey                         # priority: 99
+  - ValidateTerm                   # priority: 98
   - aws-lambda                     # priority: -1899
   - azure-functions                # priority: -1900
   - openwhisk                      # priority: -1901
