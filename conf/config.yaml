@@ -46,3 +46,16 @@ apisix:
       key: edd1c9f034335f136f87ad84b625c8f1  # using fixed API token has security risk, please update it when you deploy to production environment
       role: admin
   extra_lua_path: "/Users/lanccjchenjian/Documents/codes/kiop/kiop-gateway-core-apisix-plugins/?.lua"
+
+# 此处未KIOP业务自定义参数
+# 统一权限的必要参数信息，打算serverUri，userName，password设置 其他不设置为默认值
+commons:
+  oauth2:
+    client:
+      grantType: password
+      clientId: kiop-gateway-admin
+      clientSecret: 2b6jSW
+      serverUri: http://dispatch.testdolphin.com/cloud-rbac/access_token
+      userName: kfpt_admin
+      password: keda123#
+

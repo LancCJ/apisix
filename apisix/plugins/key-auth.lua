@@ -115,6 +115,7 @@ function _M.rewrite(conf, ctx)
         return 401, {message = "Invalid API key in request"}
     end
     core.log.info("consumer: ", core.json.delay_encode(consumer))
+    --require("lualib.mobdebug").start("127.0.0.1", 8172)
 
     if conf.hide_credentials then
         if from_header then
@@ -125,6 +126,8 @@ function _M.rewrite(conf, ctx)
             core.request.set_uri_args(ctx, args)
         end
     end
+
+    --local requestAfter = ctx.var.request_uri
 
     consumer_mod.attach_consumer(ctx, consumer, consumer_conf)
     core.log.info("hit key-auth rewrite")
