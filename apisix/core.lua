@@ -16,6 +16,7 @@
 --
 local log = require("apisix.core.log")
 local utils = require("apisix.core.utils")
+-- 读取配置
 local local_conf, err = require("apisix.core.config_local").local_conf()
 if not local_conf then
     error("failed to parse yaml config: " .. err)

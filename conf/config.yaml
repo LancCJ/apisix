@@ -59,3 +59,12 @@ commons:
       userName: kfpt_admin
       password: keda123#
 
+spring:
+  # redis配置(可选)，该配置只有开启那些需要redis的插件时候才需要配置，涉及的插件有:AddJwtToken
+  redis:
+    host: 192.168.9.17
+    password: 123456
+    database: 0
+    port: 50
+
+
